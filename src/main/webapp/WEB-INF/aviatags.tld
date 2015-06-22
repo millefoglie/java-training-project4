@@ -1,0 +1,64 @@
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-
+jsptaglibrary_2_1.xsd"
+	version="2.1">
+	
+	<tlib-version>1.0</tlib-version>
+	
+	<short-name>Avia Tags</short-name>
+	
+	<tag>
+		<name>depLoc</name>
+		<tag-class>com.kissair.tags.FlightDepLocTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>flight</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>arrLoc</name>
+		<tag-class>com.kissair.tags.FlightArrLocTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>flight</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>depTimestamp</name>
+		<tag-class>com.kissair.tags.FlightDepTimestampTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>flight</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>arrTimestamp</name>
+		<tag-class>com.kissair.tags.FlightArrTimestampTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>flight</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>aircraft</name>
+		<tag-class>com.kissair.tags.FlightAircraftTag</tag-class>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>flight</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

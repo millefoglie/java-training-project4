@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://java.sun.com/xml/ns/javaee" 
+        xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd"
+        id="WebApp_ID" version="3.1">
+        
+  <display-name>KissAir Web Application</display-name>
+
+  <session-config>
+    <session-timeout>
+      30
+    </session-timeout>
+  </session-config>
+  
+  <error-page>
+    <location>/errorpage.jsp</location>
+  </error-page>
+
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsp</url-pattern>
+      <page-encoding>UTF-8</page-encoding>
+    </jsp-property-group>
+  </jsp-config>
+
+  <login-config>
+  	<auth-method>FORM</auth-method>
+  	<realm-name>jdbcRealm</realm-name>
+  	<form-login-config>
+  		<form-login-page>/signin.jsp</form-login-page>
+  		<form-error-page>/signin.jsp?error=true</form-error-page>
+  	</form-login-config>
+  </login-config>
+  
+  <security-constraint>
+  	<web-resource-collection>
+  		<web-resource-name>Admin Pages</web-resource-name>
+  		<description/>
+  		<url-pattern>/restricted/admin/*</url-pattern>
+  		<url-pattern>/restricted/flightcentre</url-pattern>
+  	</web-resource-collection>
+  	<auth-constraint>
+  		<role-name>admin</role-name>
+  	</auth-constraint>
+  </security-constraint>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>Dispatcher Pages</web-resource-name>
+      <description/>
+      <url-pattern>/restricted/dispatcher/*</url-pattern>
+      <url-pattern>/restricted/flightcentre</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>dispatcher</role-name>
+    </auth-constraint>
+  </security-constraint>
+
+  <filter>
+  	<filter-name>Encoding Filter</filter-name>
+  	<filter-class>com.kissair.filters.EncodingFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>Encoding Filter</filter-name>
+  	<url-pattern>/*.jsp</url-pattern>
+  </filter-mapping>
+  
+  <filter>
+  	<filter-name>Security Filter</filter-name>
+  	<filter-class>com.kissair.filters.SecurityFilter</filter-class>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>Security Filter</filter-name>
+  	<url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  <servlet>
+  	<servlet-name>Sign Out</servlet-name>
+  	<servlet-class>com.kissair.controllers.SignOutServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Sign Out</servlet-name>
+  	<url-pattern>/signout</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Next Flights</servlet-name>
+  	<servlet-class>com.kissair.controllers.NextFlightsServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Next Flights</servlet-name>
+  	<url-pattern>/nextflights</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>Settings</servlet-name>
+  	<servlet-class>com.kissair.controllers.SettingsServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>Settings</servlet-name>
+  	<url-pattern>/settings</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+  	<param-name>javax.servlet.jsp.jstl.fmt.localizationContext</param-name>
+  	<param-value>localisations/messages</param-value>
+  </context-param>
+  
+  <context-param>
+  	<param-name>javax.servlet.jsp.jstl.fmt.fallbackLocale</param-name>
+  	<param-value>en_GB</param-value>
+  </context-param>
+  
+  <resource-ref>
+     <description>DataSource Reference</description>
+     <res-ref-name>jdbc/MysqlHikari</res-ref-name>
+     <res-type>javax.sql.DataSource</res-type>
+     <res-auth>Container</res-auth>
+  </resource-ref>
+</web-app>

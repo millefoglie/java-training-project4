@@ -1,0 +1,168 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 9:14:33 Jan 19, 2012 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 15:55:59 Jun 13, 2015.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+@import '/web/20120119091433/http://l-stat.livejournal.com/framework/reset.css';
+
+BODY.error-page {
+	min-width: 995px;
+	padding-bottom: 70px;
+	font: 12px/15px 'Arial', 'Helvetica', sans-serif;
+	}
+.error-page A {
+	color: #4C73A0;
+	}
+.error-page P.note {
+	font-style: italic;
+	}
+
+/* Header
+-------------------------------------- */
+.error-page .header {
+	position: relative;
+	height: 29.2em;
+	padding: 0 10px 0 40px;
+	margin-bottom: 26px;
+	background: #0F1A35 url(/web/20120119091433/http://l-stat.livejournal.com/img/error-pages/bg-error-page.jpg?v=1) no-repeat 0 100%;
+	}
+	.error-page .header .pic {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		}
+	.error-page .header .adv-block {
+		position: absolute;
+		bottom: 20px;
+		right: 10px;
+		float: right;
+		width: 300px;
+		color: #FFF;
+		}
+	.error-page .header .desc {
+		position: absolute;
+		left: 0;
+		bottom: 56px;
+		width: 40%;
+		margin-left: 250px;
+		color: #FFF;
+		}
+		.error-page .header .desc H1 {
+			margin-bottom: 27px;
+			line-height: 32px;
+			font-size: 30px;
+			}
+		.error-page .header .desc P {
+			line-height: 20px;
+			font-size: 15px;
+			}
+		.error-page .header .desc P.note {
+			margin-top: 7px;
+			line-height: 15px;
+			font-size: 12px;
+			}
+
+/* Article
+-------------------------------------- */
+.error-page .article {
+	width: 40%;
+	overflow: hidden;
+	margin: 0 0 50px 250px;
+	}
+	.error-page .article P,
+	.error-page .article UL LI {
+		line-height: 15px;
+		font-size: 12px;
+		}
+	.error-page .article P {
+		margin-bottom: 10px;
+		}
+	.error-page .article UL {
+		margin: 0 0 15px 7px;
+		}
+		.error-page .article UL LI {
+			padding-left: 10px;
+			margin-bottom: 2px;
+			background: url(/web/20120119091433/http://l-stat.livejournal.com/img/error-pages/bullet-round-grey.gif?v=1) no-repeat 0 50%;
+			}
+
+/* Searchbar
+-------------------------------------- */
+.error-page .searchbar {
+	overflow: hidden;
+	padding-right: 10px;
+	}
+	.error-page .searchbar H3 {
+		float: left;
+		display: inline;
+		width: 162px;
+		height: 33px;
+		overflow: hidden;
+		margin-left: 40px;
+		background: url(/web/20120119091433/http://l-stat.livejournal.com/img/error-pages/logo-lj.png?v=1) no-repeat;
+		text-indent: -3333px;
+		}
+		.error-page .searchbar H3 A {
+			display: block;
+			width: 162px;
+			height: 33px;
+			}
+	.error-page .searchbar .form-on {
+		width: 40%;
+		padding-top: 5px;
+		margin-left: 250px;
+		}
+		.error-page .searchbar .form-on FIELDSET {
+			padding: 2px 0;
+			margin-bottom: 18px;
+			border: none;
+			}
+		.error-page .searchbar .form-on .type-text,
+		.error-page .searchbar .form-on .type-submit {
+			float: left;
+			display: inline;
+			}
+		.error-page .searchbar .form-on .type-text {
+			width: 80%;
+			}
+		.error-page .searchbar .form-on .type-submit {
+			margin-left: 15px;
+			}
+			.error-page .searchbar .form-on .type-text INPUT,
+			.error-page .searchbar .form-on .type-submit INPUT {
+				overflow: visible;
+				vertical-align: middle;
+				font: 12px/15px 'Arial', 'Helvetica', sans-serif;
+				}
+			.error-page .searchbar .form-on .type-text INPUT {
+				width: 100%;
+				}
+			.error-page .searchbar .form-on .type-submit INPUT {
+				font-size: 11px;
+				}
+	.error-page .searchbar .helper {
+		overflow: hidden;
+		padding-bottom: 5px;
+		}
+		.error-page .searchbar .helper LI {
+			float: left;
+			padding: 0 13px 0 8px;
+			margin-left: -7px;
+			background: url(/web/20120119091433/http://l-stat.livejournal.com/img/error-pages/rule-grey.gif?v=1) no-repeat 0 50%;
+			line-height: 11px;
+			font-size: 11px;
+			}
+
+
+
+
+
+

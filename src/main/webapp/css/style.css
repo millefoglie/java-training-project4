@@ -1,0 +1,90 @@
+nav#header-nav {
+	margin-bottom: 0;
+}
+
+div#lang-select {
+	position: relative;
+	float: right;
+	margin: 0 2% 15px 0;
+	padding: 0;
+	font-size: 85%;
+}
+
+div#lang-select a {
+	text-decoration: none;
+}
+
+div#wrapper {
+	margin: 1% auto;
+	height: 100%;
+	overflow: hidden;
+	clear: both;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  /*font-size: 16px;*/
+}
+
+div#flights-container {
+	min-height: 500px;
+	height: 500px;
+	overflow: auto;
+	padding: 1%;
+}
+
+div#flights-container .entry:hover {
+	background-color: #eff;
+}
+
+div#flights-container .entry a, a:hover {
+	text-decoration: none;
+}
+
+div#flights-container .selected {
+	border: 2px solid #337ab7;
+}
+
+div#flights-menu {
+	min-height: 500px;
+	height: 500px;
+	position: relative;
+	overflow: auto;
+	padding: 1%;
+}
+
+div#crew-list {
+	overflow: auto;
+	height:350px;
+	min-height:350px;
+}
+
+div#crew-list ul {
+	text-indent: 0;
+	padding-left: 2ex;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+div#crew-list a{
+	color: #888;
+}
+
+div#crew-list li.selected{
+	list-style-type: disc;
+}
+
+div#crew-list li.selected a{
+	color: #033a77;
+}

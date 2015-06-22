@@ -1,0 +1,18 @@
+{
+	"en" : {
+		"from" : "from",
+		"to" : "to",
+		"aircraft" : "aircraft",
+		"crew" : "crew",
+		"Flight" : "Flight",
+		"New Flight" : "New Flight"
+	},
+	"uk_UA" : {
+		"from" : "від",
+		"to" : "до",
+		"aircraft" : "літак",
+		"crew" : "екіпаж",
+		"Flight" : "Рейс",
+		"New Flight" : "Новий рейс"
+	}
+}

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.kissair.model">
+	
+    <class name="Aircraft" table="aircrafts">
+        <id column="id" name="id" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+        <property column="model" name="model" type="java.lang.String"/>
+        <property column="reg_name" name="regName" type="java.lang.String"/>
+        <property column="manufacturer" name="manufacturer" type="java.lang.String"/>
+        <property column="manufacture_date" name="manufactureDate" type="java.util.Date"/>
+        <property column="manufacture_country" name="manufactureCountry" type="java.lang.String"/>
+        <property column="speed" name="speed" type="java.lang.Float"/>
+        <property column="max_dist" name="maxDist" type="java.lang.Float"/>
+        <property column="cabin_capacity" name="cabinCapacity" type="java.lang.Integer"/>
+        <property column="pass_capacity" name="passCapacity" type="java.lang.Integer"/>
+    </class>
+    
+    <class name="Airport" table="airports">
+        <id column="id" name="id" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+        <property column="name" name="name" type="java.lang.String"/>
+        <property column="iata_faa" name="iataFaa" type="java.lang.String"/>
+        <property column="icao" name="icao" type="java.lang.String"/>
+        <property column="latitude" name="latitude" type="java.math.BigDecimal"/>
+        <property column="longitude" name="longitude" type="java.math.BigDecimal"/>
+        <property column="city" name="city" type="java.lang.String"/>
+        <property column="country" name="country" type="java.lang.String"/>
+    </class>
+    
+    <class name="Flight" table="flights">
+        <id column="id" name="id" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+        <many-to-one column="dep_airport_id" name="depAirport" class="Airport" fetch="join"/>
+        <many-to-one column="arr_airport_id" name="arrAirport" class="Airport" fetch="join"/>
+        <property column="dep_timestamp" name="depTimestamp" type="java.sql.Timestamp"/>
+        <property column="arr_timestamp" name="arrTimestamp" type="java.sql.Timestamp"/>
+        <many-to-one column="aircraft_id" name="aircraft" class="Aircraft" fetch="join"/>
+        <set name="crew" table="employees_flights" fetch="join">
+        	<key column="flight_id"/>
+        	<many-to-many column="employee_id" class="Employee"/>
+        </set>
+    </class>
+
+    <class name="Position" table="positions">
+        <id column="id" name="id" type="java.lang.Integer">
+            <generator class="native"/>
+        </id>
+        <property column="name" name="name" type="java.lang.String"/>
+    </class>
+    
+    <class name="Employee" table="employees">
+		<id column="id" name="id" type="java.lang.Integer">
+			<generator class="native" />
+		</id>
+		<property column="reg_code" name="regCode" type="java.lang.String" />
+		<property column="name" name="name" type="java.lang.String" />
+		<property column="surname" name="surname" type="java.lang.String" />
+		<property column="gender" name="gender">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">com.kissair.model.Employee$Gender</param>
+				<param name="useNamed">true</param>
+			</type>
+		</property>
+		<many-to-one column="position_id" name="position" class="Position" fetch="join"/>
+		<property column="salary" name="salary" type="java.math.BigDecimal" />
+		<property column="date_of_birth" name="dateOfBirth" type="java.util.Date" />
+		<property column="flights_performed" name="flightsPerformed"
+			type="java.lang.Integer" />
+	</class>
+	
+</hibernate-mapping>
