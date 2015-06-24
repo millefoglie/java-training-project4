@@ -2,7 +2,6 @@ package com.kissair.util;
 
 import java.io.StringReader;
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.HashSet;
 import java.util.Set;
 
